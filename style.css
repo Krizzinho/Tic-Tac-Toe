@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 10vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.gridPlay {
+    display: grid;
+    width: calc(75vh + 20px);
+    margin: auto;
+    grid-template-rows: repeat(3, 25vh);
+    grid-template-columns: repeat(3, 25vh);
+    background-color: black;
+    gap: 10px;
+    position: relative;
+}
+
+.square,
+.square-selected {
+    font-size: 25vh;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.square:hover {
+    background-color: #eee;
+}
+
+.horizontal {
+    position: absolute;
+    width: 100%;
+    height: 2vh;
+    background-color: green;
+    transform: translateY(-50%);
+}
+
+.vertical {
+    position: absolute;
+    width: 2vh;
+    height: 100%;
+    background-color: green;
+    transform: translateX(-50%);
+}
+
+.rotate {
+    position: absolute;
+    width: 100%;
+    height: 2vh;
+    background-color: green;
+    top: 50%;
+}
+
+.hidden {
+    display: none;
+}
+
+.plus {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.minus {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    min-width: 100px;
+    width: 10%;
+    max-width: 200px;
+    height: 60px;
+    background-color: white;
+    border: 3px solid;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eee;
+}
+
+@media (max-aspect-ratio: 7/8) {
+    .gridPlay {
+        width: calc(75vw + 20px);
+        margin: auto;
+        grid-template-rows: repeat(3, 25vw);
+        grid-template-columns: repeat(3, 25vw);
+        background-color: black;
+        gap: 10px;
+        position: relative;
+    }
+
+    .square,
+    .square-selected {
+        font-size: 25vw;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+
+    button {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+    }
+
+    .horizontal,
+    .rotate {
+        height: 2vw;
+    }
+
+    .vertical {
+        width: 2vw;
+    }
+}
